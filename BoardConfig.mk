@@ -90,7 +90,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 6853492736
 
 # System as root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-BOARD_ROOT_EXTRA_FOLDERS := cache carrier dqmdbg efs keydata keyrefuge omr spu
+BOARD_ROOT_EXTRA_FOLDERS := cache carrier dqmdbg efs keydata keyrefuge omr spu firmware
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Workaround for error copying vendor files to recovery ramdisk
@@ -106,12 +106,12 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
 PLATFORM_SECURITY_PATCH := 2025-12-31
 VENDOR_SECURITY_PATCH := 2025-12-31
 #PLATFORM_VERSION := 16.1.0
-#TW_INCLUDE_CRYPTO := true
-#TW_INCLUDE_CRYPTO_FBE := true
-#TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := 1_afaneh92
+TW_DEVICE_VERSION := 1_klabit87
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -129,3 +129,5 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_USE_TOOLBOX := true
 TARGET_USES_MKE2FS := true
+TW_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true

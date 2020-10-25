@@ -35,6 +35,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/beyond0qlte/recovery/root,recovery/root)
 
+# Encryption
+PRODUCT_PACKAGES += \
+	libskeymaster4device \
+	android.hardware.keymaster@4.0-service.samsung
+
+
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_beyond0qlte
 PRODUCT_DEVICE := beyond0qlte
