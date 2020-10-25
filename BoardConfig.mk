@@ -55,7 +55,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 QCOM_BOARD_PLATFORMS += msmnile
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/samsung/beyond0qlte/prebuilt/Image-dtb
+TARGET_PREBUILT_KERNEL := device/samsung/beyond0qlte/prebuilt/Image.gz-dtb
 BOARD_PREBUILT_DTBOIMAGE := device/samsung/beyond0qlte/prebuilt/recoverydtbo
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_KERNEL_ARCH := arm64
@@ -74,6 +74,7 @@ BOARD_DTB_OFFSET := 0x01f00000
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) --pagesize $(BOARD_KERNEL_PAGESIZE) --board "SRPRI19B004"
+BOARD_MKBOOTIMG_ARGS += --recovery_dtbo $(BOARD_PREBUILT_DTBOIMAGE)
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/beyond0qlte/bootimg.mk
 
 # Recovery
